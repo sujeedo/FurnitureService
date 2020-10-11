@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?qddwy4');
+  src:  url('fonts/icomoon.eot?qddwy4#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qddwy4') format('truetype'),
+    url('fonts/icomoon.woff?qddwy4') format('woff'),
+    url('fonts/icomoon.svg?qddwy4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-free-icon-customer-service-1168331:before {
+  content: "\e900";
+}
+.icon-free-icon-customer-service-1168350:before {
+  content: "\e901";
+}
+.icon-free-icon-first-aid-kit-2492858:before {
+  content: "\e902";
+}
+.icon-free-icon-info-785923:before {
+  content: "\e903";
+}
+.icon-free-icon-plaster-3126959:before {
+  content: "\e904";
+}
+.icon-free-icon-settings-999236:before {
+  content: "\e905";
+}
