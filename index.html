@@ -15,302 +15,421 @@
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/content.css">
   <link rel="stylesheet" href="./css/media_query.css">
+  <!-- defer : html파일이 모두 로딩된 후 자바스크립트를 실행하도록 해줍니다. -->
+  <script src="./js/index.js" defer></script>
 </head>
 <body>
   <a href="#home" class="skip_menu">Skip Menu</a>
-  <!-- Header -->
-  <header>
-    <!-- Login Info -->
-    <div class="login_info">
-      <a href="#none" class="user_name">
-        <span class="ico ico_user"></span>
-        <span class="hidden_text">User Name</span>AIDA VERA
-      </a>
-      <button type="button" class="user_status">LOGOUT</button>
-    </div>
-    <!-- Top Bar -->
-    <div class="top_bar">
-      <!-- drawer & close btn -->
-      <button type="button" class="btn_drawer">
-        <span class="line_drawer"></span><span class="line_drawer"></span><span class="line_drawer"></span>
-        <span class="hidden_text">menu</span>
-      </button>
-      <!-- Logo -->
-      <div class="logo">
-        <a href="#none">
-          <img src="./img/logo.png" alt="logo image">
-          <span class="hidden_text">SNDI</span>
+  <div class="overall_container">
+    <!-- Header -->
+    <header>
+      <!-- Login Info -->
+      <div class="login_info">
+        <a href="#none" class="user_name">
+          <span class="ico ico_user"></span>
+          <span class="hidden_text">User Name</span>
+          <span class="user_name_text">AIDA VERA</span>
         </a>
-        <h1>Service Network for Dacor Information</h1>
+        <button type="button" class="user_status">LOGOUT</button>
       </div>
-      <!-- Global Navigation -->
-      <nav class="gnb">
-        <ul>
-          <li class="main_menu"><span class="main_menu_txt">PRODUCT SUPPORT<span class="ico ico_arrow"></span></span>
+      <!-- Top Bar -->
+      <div class="top_bar">
+        <!-- drawer & close btn -->
+        <button type="button" class="btn_drawer">
+          <span class="line_drawer"></span><span class="line_drawer"></span><span class="line_drawer"></span>
+          <span class="hidden_text">menu</span>
+        </button>
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#none">
+            <img src="./img/logo.png" alt="logo image">
+            <span class="hidden_text">SNDI</span>
+          </a>
+          <h1>Service Network for Dacor Information</h1>
+        </div>
+        <!-- Global Navigation -->
+        <nav class="gnb"><span class="gnb_bg"></span>
+          <ul>
+            <li class="main_menu">
+              <a href="#none" class="main_menu_txt">
+                PRODUCT SUPPORT
+                <span class="hidden_text">more menu</span>
+                <span class="ico ico_arrow"></span>
+              </a>
+              <ul class="sub_menu">
+                <li><a href="#none">RANGES</a></li>
+                <li><a href="#none">COOKTOPS</a></li>
+                <li><a href="#none">WALL OVENS</a></li>
+                <li><a href="#none">VENTILATION</a></li>
+                <li><a href="#none">MICROWAVES</a></li>
+                <li><a href="#none">WARMING DRAWER</a></li>
+                <li><a href="#none">OUTDOOR</a></li>
+                <li><a href="#none">REFRIGERATION</a></li>
+                <li><a href="#none">WINE & BEVERAGE</a></li>
+                <li><a href="#none">DISHWASHERS</a></li>
+                <li><a href="#none">ACCESSORIES</a></li>
+                <li><a href="#none">COFFEE SYSTEMS</a></li>
+              </ul>
+            </li>
+            <li class="main_menu">
+              <a href="#none" class="main_menu_txt">
+                TOPICS
+                <span class="hidden_text">more menu</span>
+                <span class="ico ico_arrow"></span>
+              </a>
+              <ul class="sub_menu">
+                <li><a href="#none">ERROR CODES</a></li>
+                <li><a href="#none">SERVICE GUIDE</a></li>
+                <li><a href="#none">PARTS CATALOG</a></li>
+                <li><a href="#none">SYMPTOMS</a></li>
+                <li><a href="#none">PRODUCT INFO</a></li>
+                <li><a href="#none">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="main_menu">
+              <a href="#none" class="main_menu_txt">
+                TRAINING
+                <span class="hidden_text">more menu</span>
+                <span class="ico ico_arrow"></span>
+              </a>
+              <ul class="sub_menu">
+                <li><a href="#none">TECHNICAL</a></li>
+                <li><a href="#none">CUSTOMER SERVICE</a></li>
+              </ul>
+            </li>
+            <li class="main_menu"><a href="#none">NEWSLETTERSS</a></li>
+            <li class="main_menu"><a href="#none">ADMIN</a></li>
+            <li class="main_menu"><a href="#none">TERMS OF USE</a></li>
+            <li class="main_menu"><a href="#none">CONTACT US</a></li>
+            <li class="main_menu"><a href="#none">LOGOUT</a></li>
+          </ul>
+        </nav>
+        <!-- Search Box Open Btn -->
+        <button type="button" class="ico btn_search">
+          <span class="hidden_text">search</span>
+        </button>
+        <!-- Search Box -->
+        <div class="search_container">
+          <form action="#none" method="get" class="search_box">
+            <input type="search" aria-label="search" name="search" placeholder="Search">
+            <!-- <input type="submit" name="submit" value="" class="ico submit_search"> -->
+            <button type="submit" name="submit" value="" class="ico submit_search">
+              <span class="hidden_text">Search</span>
+            </button>
+          </form>
+          <button type="button" class="ico btn_close">
+            <span class="hidden_text">close</span>
+          </button>
+        </div>
+      </div><!-- Top Bar End-->
+      <div class="bread">Home</div>
+    </header>
+    <!-- Header End-->
+    <!-- Modal -->
+    <div class="modal_container none" tabindex="1">
+      <!-- Logout Check Modal -->
+      <div class="logout_box modal_box none">
+        <button type="button" class="ico btn_close" tabindex="1">
+          <span class="hidden_text">close</span>
+        </button>
+        <div class="logout_ico modal_ico">
+          <div class="ico"></div>
+        </div>
+        <p>Are you sure you want to<br><strong>LOGOUT?</strong></p>
+        <button type="button" class="btn_logout modal_btn" tabindex="1">NO</button>
+        <button type="button" class="btn_logout modal_btn" tabindex="1">YES</button>
+      </div>
+      <!-- Login Input Modal -->
+      <div class="login_input_box modal_box none">
+        <div>
+          <button type="button" class="ico btn_close" tabindex="1">
+            <span class="hidden_text">close</span>
+          </button>
+          <a href="#none" tabindex="1">
+            <img src="./img/logo.png" alt="logo image">
+            <span class="hidden_text">SNDI</span>
+            <span>Service Network for Everyone</span>
+          </a>
+        </div>
+        <p><span>SERVISE NETWORK FOR</span>DACOR INFORMATION</p>
+        <form class="login_input">
+          <ul>
+            <li class="user_id">
+              <input type="text" name="id" placeholder="USER ID" id="user_id" tabindex="1" required>
+              <label for="user_id" class="ico">
+                <span class="hidden_text">ID</span>
+              </label>
+            </li>
+            <li class="user_pass">
+              <input type="password" name="pass" placeholder="PASSWORD" id="user_pass" tabindex="1" required>
+              <label for="user_pass" class="ico">
+                <span class="hidden_text">PASSWORD</span>
+              </label>
+            </li>
+          </ul>
+          <input type="checkbox" name="remember" id="remember" tabindex="1"> 
+          <label for="remember" tabindex="1"><span></span>Remember me</label>
+          <button type="button" class="forget_pass_btn" tabindex="1">
+            Forgot your password?
+          </button>
+          <input type="submit" class="login_input_btn" value="LOGIN" tabindex="1">
+        </form>
+      </div>
+      <!-- Login Fail Modal -->
+      <div class="login_fail modal_box none">
+        <button type="button" class="ico btn_close" tabindex="1">
+          <span class="hidden_text">close</span>
+        </button>
+        <div class="login_fail_ico modal_ico">
+          <div class="ico"></div>
+        </div>
+        <h2>UNABLE TO LOGIN</h2>
+        <p>The User ID or Password you<br>
+           entered is incorrect.Please click 'OK'<br>
+           to re enter your ID and Password.</p>
+        <button type="button" class="btn_login_fail modal_btn" tabindex="1">OK</button>
+      </div>
+      <!-- Password Reset Modal -->
+      <div class="password_reset modal_box none">
+        <button type="button" class="ico btn_close" tabindex="1">
+          <span class="hidden_text">close</span>
+        </button>
+        <div class="pass_reset_ico modal_ico">
+          <div class="ico"></div>
+        </div>
+        <p>Are you Sure to reset<br>your Password?</p>
+        <button type="button" class="password_reset_btn modal_btn" tabindex="1">NO</button>
+        <button type="button" class="password_reset_btn modal_btn" tabindex="1">YES</button>
+      </div>
+      <!-- Password Reset Message Modal -->
+      <div class="reset_message modal_box none">
+        <button type="button" class="ico btn_close" tabindex="1">
+          <span class="hidden_text">close</span>
+        </button>
+        <div class="reset_message_ico modal_ico">
+          <div class="ico"></div>
+        </div>
+        <h2>RESET PASSWORD</h2>
+        <p>Your login information<br>
+           has been sent to you using<br>
+           the email address on file.</p>
+        <button type="button" class="reset_message_btn modal_btn" tabindex="1">GO TO LOGIN</button>
+      </div>
+    </div>
+    <!-- Modal End -->
+    <!-- Home -->
+    <section id="home" class="home">
+      <div class="bg_black">
+        <h2>Know your <span class="title_strong">Product / Serial Number?</span></h2>
+        <!-- Search Area -->
+        <form action="#none" method="get" class="search_area" aria-label="search area">
+          <select name="Product">
+            <option value="num1">Product</option>
+            <option value="num2" selected>Product Number</option>
+          </select>
+          <input type="search" name="model_number" placeholder="Enter your model number"
+            aria-label="Enter your model number">
+          <input type="submit" name="submit" value="" class="ico submit_search" aria-label="search">
+        </form>
+      </div>
+    </section>
+    <!-- Home End -->
+    <!-- Product -->
+    <section class="product">
+      <h2 class="title"><span class="title_strong">PRODUCT</span> CATEGORY</h2>
+      <p class="description">Start your product knowledge discovery by selecting it's category</p>
+      <ul class="category">
+        <li><a href="#none"><span><img src="./img/category_ranges.png" alt="range"></span><span>RANGES</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_oven.png" alt="oven"></span><span>WALL OVENS</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_microwave.png"
+                alt="microwave"></span><span>MICROWAVES</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_outdoor.png" alt="outdoor"></span><span>OUTDOOR</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_winebeverage.png" alt="winebeverage"></span><span>WINE &
+              BEVERAGE</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_accessories.png"
+                alt="accessories"></span><span>ACCESSORIES</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_cooktop.png" alt="cooktop"></span><span>COOKTOPS</span></a>
+        </li>
+        <li><a href="#none"><span><img src="./img/category_ventilation.png"
+                alt="ventilation"></span><span>VENTILATION</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_warmingdrawer.png" alt="warmingdrawer"></span><span>WARMING
+              DRAWER</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_refrigeration.png"
+                alt="refrigeration"></span><span>REFRIGERATION</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_dishwashers.png"
+                alt="dishwashers"></span><span>DISHWASHERS</span></a></li>
+        <li><a href="#none"><span><img src="./img/category_coffeeststems.png" alt="coffeeststems"></span><span>COFFEE
+              SYSTEMS</span></a></li>
+      </ul>
+    </section>
+    <!-- Product Category End-->
+    <!-- Topic -->
+    <section class="topic">
+      <h2 class="title"><span class="title_strong">TOPICS</span></h2>
+      <p class="description">You can access knowledge detail by knowledge content type</p>
+      <ul class="category">
+        <li><a href="#none"><span><i class="icon-topic_errorcode icomoon"></i></span><span>ERROR CODES</span></a></li>
+        <li><a href="#none"><span><i class="icon-topic_serviceguide icomoon"></i></span><span>SERVICE GUIDE</span></a>
+        </li>
+        <li><a href="#none"><span><i class="icon-topic_partscatalog icomoon"></i></span><span>PARTS CATALOG</span></a>
+        </li>
+        <li><a href="#none"><span><i class="icon-topic_symptoms icomoon"></i></span><span>SYMPTOMS</span></a></li>
+        <li><a href="#none"><span><i class="icon-topic_productinfo icomoon"></span></i><span>PRODUCT INFO</span></a></li>
+        <li><a href="#none"><span><i class="icon-topic_FAQ icomoon"></i></span><span>FAQ</span></a></li>
+      </ul>
+    </section>
+    <!-- Topic End -->
+    <!-- Recent Searched -->
+    <section class="recent_searched">
+      <h2 class="title">RECENT <span class="title_strong">SEARCHED</span></h2>
+      <div class="slider_container">
+        <button type="button" class="ico btn_prev"><span class="hidden_text">previous</span></button>
+        <ul class="slider_wrap">
+          <li class="slider_cards showing">
+            <span class="cards_img">
+              <img src="./img/recent_RF22N9781SG.png" alt="RF22N9781SG">
+            </span>
+            <span class="cards_text">
+              <span>22 cu. ft. Counter Depth 4-Door Flex™<br>
+                with 21.5 in. Connected Touch<br>
+                Screen Family Hub™ Refrigerator</span>
+              <a href="#none">RF22N9781SG/AA</a>
+            </span>
+          </li>
+          <li class="slider_cards">
+            <span class="cards_img">
+              <img src="./img/recent_NX58M9960PS.png" alt="NX58M9960PS">
+            </span>
+            <span class="cards_text">
+              <span>5.8 cu. ft. 30" Gas Chef Collection<br>
+                Pro Range with Dual Convection</span>
+              <a href="#none">NX58M9960PS/AA</a>
+            </span>
+          </li>
+          <li class="slider_cards">
+            <span class="cards_img">
+              <img src="./img/recent_NV51M9770SM.png" alt="NV51M9770SM">
+            </span>
+            <span class="cards_text">
+              <span>30" Chef Collection Single<br>
+                Wall Oven with Flex Duo™</span>
+              <a href="#none">NV51M9770SM/AA</a>
+            </span>
+          </li>
+          <li class="slider_cards">
+            <span class="cards_img">
+              <img src="./img/recent_RH29H9000SR.png" alt="RH29H9000SR">
+            </span>
+            <span class="cards_text">
+              <span>29 cu. ft. Side-by-Side Food ShowCase<br>
+                Refrigerator with Metal Cooling</span>
+              <a href="#none">RH29H9000SR/AA</a>
+            </span>
+          </li>
+          <li class="slider_cards">
+            <span class="cards_img">
+              <img src="./img/recent_DVG55M9600V.png" alt="DVG55M9600V">
+            </span>
+            <span class="cards_text">
+              <span>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</span>
+              <a href="#none">DVG55M9600V/A3</a>
+            </span>
+          </li>
+          <li class="slider_cards">
+            <span class="cards_img">
+              <img src="./img/recent_WA50M7450AW.png" alt="WA50M7450AW">
+            </span>
+            <span class="cards_text">
+              <span>WA7450 5.0 cu. ft. Top Load Washer</span>
+              <a href="#none">WA50M7450AW/A4</a>
+            </span>
+          </li>
+        </ul>
+        <button type="button" class="ico btn_next"><span class="hidden_text">next</span></button>
+      </div>
+    </section>
+    <!-- Recent Searched End-->
+    <!-- NewsLetter -->
+    <section class="newsletter">
+      <div class="banner"></div>
+      <h2 class="title">EXCEPTIONAL 24/7 <span class="title_strong">CUSTOMER CARE</span></h2>
+      <p class="description">Our dedicated support team is ready to take your call 24/7.
+        <span class="br">We are committed to ensuring you have an exceptional customer experience.</span></p>
+      <a href="#none">CONTACT US</a>
+    </section>
+    <!-- NewsLetter End-->
+    <!-- Footer -->
+    <footer>
+      <!-- Site Map -->
+      <div class="footer_bg">
+        <ul class="site_map">
+          <li class="main_menu">PRODUCT SUPPORT
             <ul class="sub_menu">
-              <li><a href="#none">RANGES</a></li>
-              <li><a href="#none">COOKTOPS</a></li>
-              <li><a href="#none">WALL OVENS</a></li>
-              <li><a href="#none">VENTILATION</a></li>
-              <li><a href="#none">MICROWAVES</a></li>
-              <li><a href="#none">WARMING DRAWER</a></li>
-              <li><a href="#none">OUTDOOR</a></li>
-              <li><a href="#none">REFRIGERATION</a></li>
-              <li><a href="#none">WINE & BEVERAGE</a></li>
-              <li><a href="#none">DISHWASHERS</a></li>
-              <li><a href="#none">ACCESSORIES</a></li>
-              <li><a href="#none">COFFEE SYSTEMS</a></li>
+              <li><a href="#none">Wall Ovens</a></li>
+              <li><a href="#none">Ranges</a></li>
+              <li><a href="#none">Cooktops</a></li>
+              <li><a href="#none">Refrigeration</a></li>
+              <li><a href="#none">Microwaves</a></li>
+              <li><a href="#none">Dishwashers</a></li>
+              <li><a href="#none">Ventilation</a></li>
+              <li><a href="#none">Wine & Beverage</a></li>
+              <li><a href="#none">Warming Drawers</a></li>
+              <li><a href="#none">Outdoor</a></li>
+              <li><a href="#none">Coffee Systems</a></li>
+              <li><a href="#none">Accessories</a></li>
             </ul>
           </li>
-          <li class="main_menu"><span class="main_menu_txt">TOPICS<span class="ico ico_arrow"></span></span>
+          <li class="main_menu">TOPIC
             <ul class="sub_menu">
-              <li><a href="#none">ERROR CODES</a></li>
-              <li><a href="#none">SERVICE GUIDE</a></li>
-              <li><a href="#none">PARTS CATALOG</a></li>
-              <li><a href="#none">SYMPTOMS</a></li>
-              <li><a href="#none">PRODUCT INFO</a></li>
+              <li><a href="#none">Error Codes</a></li>
+              <li><a href="#none">Service Guide</a></li>
+              <li><a href="#none">Parts Catalog</a></li>
+              <li><a href="#none">Symptoms</a></li>
+              <li><a href="#none">Product Info</a></li>
               <li><a href="#none">FAQ</a></li>
             </ul>
           </li>
-          <li class="main_menu"><span class="main_menu_txt">TRAINING<span class="ico ico_arrow"></span></span>
+          <li class="main_menu">TRAINING
             <ul class="sub_menu">
-              <li><a href="#none">TECHNICAL</a></li>
-              <li><a href="#none">CUSTOMER SERVICE</a></li>
+              <li><a href="#none">Technical Training</a></li>
+              <li><a href="#none">Customer Service Training</a></li>
             </ul>
           </li>
-          <li class="main_menu"><a href="#none">NEWSLETTERSS</a></li>
-          <li class="main_menu"><a href="#none">ADMIN</a></li>
-          <li class="main_menu"><a href="#none">TERMS OF USE</a></li>
-          <li class="main_menu"><a href="#none">CONTACT US</a></li>
-          <li class="main_menu"><a href="#none">LOGOUT</a></li>
+          <li class="main_menu"><a href="#none">NEWSLETTERS</a></li>
         </ul>
-      </nav>
-      <!-- Search Box Open Btn -->
-      <button type="button" class="ico btn_search">
-        <span class="hidden_text">search</span>
-      </button>
-      <!-- Search Box -->
-      <div class="search_container">
-        <form action="#none" method="get" class="search_box">
-          <input type="search" aria-label="search" name="search" placeholder="Search">
-          <input type="submit" name="submit" value="" class="ico submit_search">
-        </form>
-        <button type="button" class="ico btn_close">
-          <span class="hidden_text">close</span>
-        </button>
+        <!-- Search Box -->
+        <div class="search_container">
+          <form action="#none" method="get" class="search_box2">
+            <input type="search" name="search" placeholder="Search">
+            <button type="submit" name="submit" value="" class="ico submit_search">
+              <span class="hidden_text">Search</span>
+            </button>
+          </form>
+        </div>
+        <!-- SNS -->
+        <div class="sns">
+          <span>FOLLOW US</span>
+          <ul>
+            <li><a href="#none"><i class="fab fa-facebook-f"></i><span class="hidden_text">Facebook Shortcuts</span></a>
+            </li>
+            <li><a href="#none"><i class="fab fa-twitter"></i><span class="hidden_text">twitter Shortcuts</span></a></li>
+            <li><a href="#none"><i class="fab fa-youtube"></i><span class="hidden_text">youtube Shortcuts</span></a></li>
+            <li><a href="#none"><i class="fab fa-pinterest-p"></i><span class="hidden_text">pinterest Shortcuts</span></a>
+            </li>
+            <li><a href="#none" class="icomoon"><i class="icon-ico_box color-b"></i><span
+                  class="hidden_text">Shortcuts</span></a></li>
+          </ul>
+        </div>
+        <!-- ETC -->
+        <ul class="etc">
+          <li><a href="#none">SITEMAP</a></li>
+          <li><a href="#none">PRIVACY POLICY</a></li>
+          <li><a href="#none">TERMS OF USE</a></li>
+          <li><a href="#none">CONTACT US</a></li>
+        </ul>
       </div>
-    </div><!-- Top Bar End-->
-    <div class="bread">Home</div> 
-  </header>
-  <!-- Header End-->
-  <!-- Logout Check Modal -->
-  <div class="modal_container">
-    <div class="logout_box">
-      <button type="button" class="ico btn_close">
-        <span class="hidden_text">close</span>
-      </button>
-      <div class="logout_ico"><div class="ico"></div></div>
-      <p>Are you sure you want to<br><strong>LOGOUT?</strong></p>
-      <button type="button" class="btn_logout">NO</button>
-      <button type="button" class="btn_logout">YES</button>
-    </div>
+    </footer>
+    <!-- Footer End -->
   </div>
-  <!-- Logout Check Modal End -->
-  <!-- Home -->
-  <section id="home" class="home">
-    <div class="bg_black">
-      <h2>Know your <span class="title_strong">Product / Serial Number?</span></h2>
-      <!-- Search Area -->
-      <form action="#none" method="get" class="search_area" aria-label="search area">
-        <select name="Product">
-          <option value="num1">Product</option>
-          <option value="num2" selected>Product Number</option>
-        </select>
-        <input type="search" name="model_number" placeholder="Enter your model number" aria-label="Enter your model number">
-        <input type="submit" name="submit" value="" class="ico submit_search" aria-label="search">
-      </form>
-    </div>
-  </section>
-  <!-- Home End -->
-  <!-- Product -->
-  <section class="product">
-    <h2 class="title"><span class="title_strong">PRODUCT</span> CATEGORY</h2>
-    <p class="description">Start your product knowledge discovery by selecting it's category</p>
-    <ul class="category">
-      <li><a href="#none"><span><img src="./img/category_ranges.png" alt="range"></span><span>RANGES</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_oven.png" alt="oven"></span><span>WALL OVENS</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_microwave.png" alt="microwave"></span><span>MICROWAVES</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_outdoor.png" alt="outdoor"></span><span>OUTDOOR</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_winebeverage.png" alt="winebeverage"></span><span>WINE & BEVERAGE</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_accessories.png" alt="accessories"></span><span>ACCESSORIES</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_cooktop.png" alt="cooktop"></span><span>COOKTOPS</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_ventilation.png" alt="ventilation"></span><span>VENTILATION</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_warmingdrawer.png" alt="warmingdrawer"></span><span>WARMING DRAWER</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_refrigeration.png" alt="refrigeration"></span><span>REFRIGERATION</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_dishwashers.png" alt="dishwashers"></span><span>DISHWASHERS</span></a></li>
-      <li><a href="#none"><span><img src="./img/category_coffeeststems.png" alt="coffeeststems"></span><span>COFFEE SYSTEMS</span></a></li>
-    </ul>
-  </section>
-  <!-- Product Category End-->
-  <!-- Topic -->
-  <section class="topic">
-    <h2 class="title"><span class="title_strong">TOPICS</span></h2>
-    <p class="description">You can access knowledge detail by knowledge content type</p>
-    <ul class="category">
-      <li><a href="#none"><span><i class="icon-topic_errorcode icomoon"></i></span><span>ERROR CODES</span></a></li>
-      <li><a href="#none"><span><i class="icon-topic_serviceguide icomoon"></i></span><span>SERVICE GUIDE</span></a></li>
-      <li><a href="#none"><span><i class="icon-topic_partscatalog icomoon"></i></span><span>PARTS CATALOG</span></a></li>
-      <li><a href="#none"><span><i class="icon-topic_symptoms icomoon"></i></span><span>SYMPTOMS</span></a></li>
-      <li><a href="#none"><span><i class="icon-topic_productinfo icomoon"></span></i><span>PRODUCT INFO</span></a></li>
-      <li><a href="#none"><span><i class="icon-topic_FAQ icomoon"></i></span><span>FAQ</span></a></li>
-    </ul>
-  </section>
-  <!-- Topic End -->
-  <!-- Recent Searched -->
-  <section class="recent_searched">
-    <h2 class="title">RECENT <span class="title_strong">SEARCHED</span></h2>
-    <div class="slider_container">
-      <button type="button" class="ico btn_prev"><span class="hidden_text">previous</span></button>
-      <ul class="slider_wrap">
-        <li class="slider_cards first">
-          <span class="cards_img">
-            <img src="./img/recent_RF22N9781SG.png" alt="RF22N9781SG">
-          </span>
-          <span class="cards_text">
-            <span>22 cu. ft. Counter Depth 4-Door Flex™<br>
-              with 21.5 in. Connected Touch<br>
-              Screen Family Hub™ Refrigerator</span>
-            <a href="#none">RF22N9781SG/AA</a>
-          </span>
-        </li>
-        <li class="slider_cards">
-          <span class="cards_img">
-            <img src="./img/recent_NX58M9960PS.png" alt="NX58M9960PS">
-          </span>
-          <span class="cards_text">
-            <span>5.8 cu. ft. 30" Gas Chef Collection<br>
-              Pro Range with Dual Convection</span>
-            <a href="#none">NX58M9960PS/AA</a>
-          </span>
-        </li>
-        <li class="slider_cards">
-          <span class="cards_img">
-            <img src="./img/recent_NV51M9770SM.png" alt="NV51M9770SM">
-          </span>
-          <span class="cards_text">
-            <span>30" Chef Collection Single<br>
-              Wall Oven with Flex Duo™</span>
-            <a href="#none">NV51M9770SM/AA</a>
-          </span>
-        </li>
-        <li class="slider_cards">
-          <span class="cards_img">
-            <img src="./img/recent_RH29H9000SR.png" alt="RH29H9000SR">
-          </span>
-          <span class="cards_text">
-            <span>29 cu. ft. Side-by-Side Food ShowCase<br>
-              Refrigerator with Metal Cooling</span>
-            <a href="#none">RH29H9000SR/AA</a>
-          </span>
-        </li>
-        <li class="slider_cards">
-          <span class="cards_img">
-            <img src="./img/recent_DVG55M9600V.png" alt="DVG55M9600V">
-          </span>
-          <span class="cards_text">
-            <span>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</span>
-            <a href="#none">DVG55M9600V/A3</a>
-          </span>
-        </li>
-        <li class="slider_cards">
-          <span class="cards_img">
-            <img src="./img/recent_WA50M7450AW.png" alt="WA50M7450AW">
-          </span>
-          <span class="cards_text">
-            <span>WA7450 5.0 cu. ft. Top Load Washer</span>
-            <a href="#none">WA50M7450AW/A4</a>
-          </span>
-        </li>
-      </ul>
-      <button type="button" class="ico btn_next"><span class="hidden_text">next</span></button>
-    </div>
-  </section>
-  <!-- Recent Searched End-->
-  <!-- NewsLetter -->
-  <section class="newsletter">
-    <div class="banner"></div>
-    <h2 class="title">EXCEPTIONAL 24/7 <span class="title_strong">CUSTOMER CARE</span></h2>
-    <p class="description">Our dedicated support team is ready to take your call 24/7.
-       <span class="br">We are committed to ensuring you have an exceptional customer experience.</span></p>
-    <a href="#none">CONTACT US</a>
-  </section>
-  <!-- NewsLetter End-->
-  <!-- Footer -->
-  <footer>
-    <!-- Site Map -->
-    <div class="footer_bg">
-      <ul class="site_map">
-        <li class="main_menu">PRODUCT SUPPORT
-          <ul class="sub_menu">
-            <li><a href="#none">Wall Ovens</a></li>
-            <li><a href="#none">Ranges</a></li>
-            <li><a href="#none">Cooktops</a></li>
-            <li><a href="#none">Refrigeration</a></li>
-            <li><a href="#none">Microwaves</a></li>
-            <li><a href="#none">Dishwashers</a></li>
-            <li><a href="#none">Ventilation</a></li>
-            <li><a href="#none">Wine & Beverage</a></li>
-            <li><a href="#none">Warming Drawers</a></li>
-            <li><a href="#none">Outdoor</a></li>
-            <li><a href="#none">Coffee Systems</a></li>
-            <li><a href="#none">Accessories</a></li>
-          </ul>
-        </li>
-        <li class="main_menu">TOPIC
-          <ul class="sub_menu">
-            <li><a href="#none">Error Codes</a></li>
-            <li><a href="#none">Service Guide</a></li>
-            <li><a href="#none">Parts Catalog</a></li>
-            <li><a href="#none">Symptoms</a></li>
-            <li><a href="#none">Product Info</a></li>
-            <li><a href="#none">FAQ</a></li>
-          </ul>
-        </li>
-        <li class="main_menu">TRAINING
-          <ul class="sub_menu">
-            <li><a href="#none">Technical Training</a></li>
-            <li><a href="#none">Customer Service Training</a></li>
-          </ul>
-        </li>
-        <li class="main_menu"><a href="#none">NEWSLETTERS</a></li>
-      </ul>
-      <!-- Search Box -->
-      <div class="search_container">
-        <form action="#none" method="get" class="search_box2">
-          <input type="search" name="search" placeholder="Search">
-          <input type="submit" name="submit" value="" class="ico submit_search">
-        </form>
-      </div>
-      <!-- SNS -->
-      <div class="sns">
-        <span>FOLLOW US</span>
-        <ul>
-          <li><a href="#none"><i class="fab fa-facebook-f"></i><span class="hidden_text">Facebook Shortcuts</span></a></li>
-          <li><a href="#none"><i class="fab fa-twitter"></i><span class="hidden_text">twitter Shortcuts</span></a></li>
-          <li><a href="#none"><i class="fab fa-youtube"></i><span class="hidden_text">youtube Shortcuts</span></a></li>
-          <li><a href="#none"><i class="fab fa-pinterest-p"></i><span class="hidden_text">pinterest Shortcuts</span></a></li>
-          <li><a href="#none" class="icomoon"><i class="icon-ico_box color-b"></i><span class="hidden_text">Shortcuts</span></a></li>
-        </ul>
-      </div>
-      <!-- ETC -->
-      <ul class="etc">
-        <li><a href="#none">SITEMAP</a></li>
-        <li><a href="#none">PRIVACY POLICY</a></li>
-        <li><a href="#none">TERMS OF USE</a></li>
-        <li><a href="#none">CONTACT US</a></li>
-      </ul>
-    </div>
-  </footer>
-  <!-- Footer End -->
 </body>
 </html>
