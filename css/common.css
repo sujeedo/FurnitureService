@@ -4,53 +4,38 @@
   --color-medium-white: #c8c8c8;
   --color-dark-white: #aeaeae;
   --color-light-gray: #939393;
+  --color-medium-gray: #575758;
   --color-gray: #484848;
   --color-dark-gray: #333333;
   --color-light-black: #282828;
-  --color-black: #1e1e1e;
+  --color-black: #1a1a1a;
   --color-dark-black: #000000;
   --color-opaque-black: rgba(0, 0, 0, 0.5);
   --color-light-blue: #0dbeff;
   --color-blue: #35abf5;
 }
-/** CSS Reset **/
-* {
-  box-sizing: border-box;
-}
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+/* Commons Tag */
 html, body {
   width: 100%;
   height: 100%;
-  font-weight: 300;
-  font-family: 'Noto Sans CJK KR', Noto Sans KR, sans-serif;
+  margin: 0;
+	padding: 0;
+  font-size: 62.5%;
+  font-weight: 100;
+  background-color: var(--color-light-black);
+  color: var(--color-white);
   text-align: center;
 }
+* {
+  font-family: 'Noto Sans CJK KR', Noto Sans KR, sans-serif;
+  box-sizing: border-box;
+}
 ul {
-	list-style: none;
+  list-style: none;
+  padding: 0;
 }
 a {
   text-decoration: none;
-}
-a:visited, a:link {
   color: var(--color-white);
 }
 button {
@@ -58,32 +43,30 @@ button {
   background: transparent;
   cursor: pointer;
 }
-/* Background Color */
-body {
-  background-color: var(--color-light-black);
-  color: var(--color-white);
+input[type=submit] {
+  border: 0;
 }
-/* Hidden */
-.hidden-text {
+/* Commons Class */
+.hidden_text {
   display: block;
   overflow: hidden; 
   width: 0; 
   height: 0;
 }
-/* Section Commons */
-h2 {
-  margin-top: 70px;
-  font-weight: 300;
-  font-size: 44px;
-  line-height: 45px;
-  transition: 0.3s;
+.ico {
+  background: url(../img/sprite.png) no-repeat;
+  background-size: 20rem 10rem;
 }
-p {
-  margin: 10px 30px;
-  margin-bottom: 60px;
-  padding: 10px 50px;
+.title {
+  margin: 3rem 0 0 0;
   font-weight: 100;
-  font-size: 28px;
-  line-height: 1.2em;
+  font-size: 2.2rem;
 }
-
+.title_strong {
+  font-weight: 600;
+}
+.description {
+  margin: 0 0 2.5rem 0;
+  padding: 0 5rem;
+  font-size: 1.4rem
+}
