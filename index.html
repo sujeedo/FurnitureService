@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #2a2a2a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!--==========Header==========-->
+  <header>
+    <!--login_info-->
+    <div id="login_info">
+      <div class="user_name">
+        <img src="img/icon_human.png" alt="human icon">Aida Vera
+      </div>
+      <a href="#" class="login_button modal-open">LOGIN</a>
+      <a href="#" class="logout_button modal-open">LOGOUT</a>
+    </div>
+
+    <!--global navigation bar-->
+    <div id="GNB">
+      <div class="logo">
+        <img src="img/icon_close.png" alt="close icon">
+        <img src="img/logo.png" alt="logo image">
+        <p>Service Network for Dacor Information</p>
+      </div>
+      <ul class="GNB_menu">
+        <li>Product Support
+          <ul>
+            <li><a href="#">Ranges</a></li>
+            <li><a href="#">Cooktops</a></li>
+            <li><a href="#">Wall Ovens</a></li>
+            <li><a href="#">Ventilation</a></li>
+            <li><a href="#">Microwaves</a></li>
+            <li><a href="#">Warming Drawers</a></li>
+            <li><a href="#">Outdoor</a></li>
+            <li><a href="#">Refrigeration</a></li>
+            <li><a href="#">Wine & Beverage</a></li>
+            <li><a href="#">Dishwashers</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Coffee Systems</a></li>
+          </ul>
+        </li>
+        <li>TOPICS
+          <ul>
+            <li><a href="#">ERROR CODES</a></li>
+            <li><a href="#">SERVICE GUIDE</a></li>
+            <li><a href="#">PARTS CATALOG</a></li>
+            <li><a href="#">SYMPTOMS</a></li>
+            <li><a href="#">PRODUCT INFO</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+        <li>TRAINING
+          <ul>
+            <li><a href="#">TECHNICAL</a></li>
+            <li><a href="#">CUSTOMER SERVICE</a></li>
+          </ul>
+        </li>
+        <li><a href="#">NEWSLETTERSS</a></li>
+        <li><a href="#">ADMIN</a></li>
+      </ul>
+
+      <!--global_search_box-->
+      <div class="global_search_box">
+        <img src="img/icon_global_search.png" alt="global search icon">
+        <div class="global_search_ov">
+          <form>
+            <input name="search" type="text" placeholder="Search">
+            <img src="img/icon_global_search.png" alt="global search icon">
+          </form>
+          <img src="img/icon_close.png" alt="close icon">
+        </div>
+      </div>
+      
+      <!--Mobile global navigation bar-->
+      <ul class="GNB_mobile">
+        <li>PRODUCT SUPPORT<img src="img/icon_toparrow.png" alt="toparrow icon">
+          <ul>
+            <li><a href="#">Ranges</a></li>
+            <li><a href="#">Cooktops</a></li>
+            <li><a href="#">Wall Ovens</a></li>
+            <li><a href="#">Ventilation</a></li>
+            <li><a href="#">Microwaves</a></li>
+            <li><a href="#">Warming Drawers</a></li>
+            <li><a href="#">Outdoor</a></li>
+            <li><a href="#">Refrigeration</a></li>
+            <li><a href="#">Wine & Beverage</a></li>
+            <li><a href="#">Dishwashers</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Coffee Systems</a></li>
+          </ul>
+        </li>
+        <li>TOPICS<img src="img/icon_toparrow.png" alt="toparrow icon">
+          <ul>
+            <li><a href="#">ERROR CODES</a></li>
+            <li><a href="#">SERVICE GUIDE</a></li>
+            <li><a href="#">PARTS CATALOG</a></li>
+            <li><a href="#">SYMPTOMS</a></li>
+            <li><a href="#">PRODUCT INFO</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+        <li>TRAINING<img src="img/icon_toparrow.png" alt="toparrow icon">
+          <ul>
+            <li><a href="#">TECHNICAL</a></li>
+            <li><a href="#">CUSTOMER SERVICE</a></li>
+          </ul>
+        </li>
+        <li><a href="#">NEWSLETTERSS</a></li>
+        <li><a href="#">ADMIN</a></li>
+        <li><a href="#">TERMS OF USE</a></li>
+        <li><a href="#">CONTACTUS</a></li>
+        <li><a href="#">LOGOUT</a></li>
+      </ul>
+      
+    </div><!--GNB-->
+  </header>
+
+  <!--==========Login Modal==========-->
+  <div id="modal">
+    <!--Login Input Modal-->
+    <div class="login_popup modal">
+      <div class="logo">
+        <img src="img/logo.png" alt="logo image">
+        <p>Service Network for Everyone</p>
+        <img src="img/icon_close.png" alt="close icon">
+      </div>
+      <p>SERVICE NETWORK FOR<br>DACOR INFORMATION</p>
+      <form class="login_input">
+        <ul>
+          <li>
+            <input type="text" name="id" placeholder="USER ID" id="user_id">
+            <label for="user_id"><img src="img/icon_user.png" alt="user icon"></label>
+          </li>
+          <li>
+            <input type="password" name="pass" placeholder="PASSWORD" id="pass"> 
+            <label for="pass"><img src="img/icon_password.png" alt="password icon"></label>
+          </li>
+        </ul>
+      </form>
+      <form class="login_remember">
+        <input type="checkbox" name="remember" id="remember"> 
+        <label for="remember">Remember me</label>
+        <a href="#">Forgot your password?</a>
+      </form>
+      <button type="button" onclick="location.href='#'">LOGIN</button>
+    </div>
+
+    <!--Login Fail Modal-->
+    <div class="login_fail modal">
+      <img src="img/icon_close.png" alt="close icon">
+      <img src="img/icon_lock.png" alt="lock icon">
+      <p>UNABLE TO LOGIN</p>
+      <p>The User ID or Password you<br>
+         entered is incorrect.Please click 'OK'<br>
+         to re enter your ID and Password.</p>
+      <button>YES</button>
+    </div>
+
+    <!--Password Reset Modal-->
+    <div class="password_reset modal">
+      <img src="img/icon_close.png" alt="close icon">
+      <img src="img/icon_reset.png" alt="lock icon">
+      <p>Are Sure to reset<br>
+         your Password?</p>
+      <button>NO</button>
+      <button>YES</button>
+    </div>
+
+    <!--Password Reset Complete Modal-->
+    <div class="password_reset_complete modal">
+      <img src="img/icon_close.png" alt="close icon">
+      <img src="img/icon_reset2.png" alt="lock icon">
+      <p>RESET PASSWORD</p>
+      <p>Your login information<br>
+         has been sent to you using<br>
+         the email address on file.</p>
+      <button>GO TO LOGIN</button>
+    </div>
+
+    <!--Logout Check Modal-->
+    <div class="logout modal">
+      <img src="img/icon_close.png" alt="close icon">
+      <img src="img/icon_door.png" alt="lock icon">
+      <p>Are you sure you want to<br>
+         <strong>LOGOUT?</strong></p>
+      <button>NO</button>
+      <button>YES</button>
+    </div>
+  </div><!--Modal-->
+
+  <!--==========Home==========-->
+  <section id="home">
+    <!--background image-->
+    <h1>Know your Product / Serial Number?</h1>
+    <form class="search area">    
+      <select name="Product">
+        <option value="Product Number" selected="selected">Product Number</option>
+      </select>
+      <input name="model_number" type="text" placeholder="Enter your model number">
+      <img src="img/icon_global_search.png" alt="global search icon">
+    </form>
+  </section>
+
+  <!--==========Product Category==========-->
+  <section id="product_category">
+    <h2>Product Category</h2>
+    <h3>Start your product knowledge discovery by selecting it's category</h3>
+    <div class="category_columns">
+      <div class="cards">
+        <img src="img/category_ranges.png" alt="range image">
+        <p>RANGE</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_cooktop.png" alt="cooktop image">
+        <p>COOKTOPS</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_oven.png" alt="oven image">
+        <p>WALL OVENS</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_ventilation.png" alt="ventilation image">
+        <p>VENTILATION</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_microwave.png" alt="microwave image">
+        <p>MICROWAVES</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_warmingdrawer.png" alt="warming drawer image">
+        <p>WARMING DRAWER</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_outdoor.png" alt="outdoor image">
+        <p>OUTDOOR</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_refrigeration.png" alt="refrigeration image">
+        <p>REFRIGERATION</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_winebeverage.png" alt="wine&beverage image">
+        <p>WINE & BEVERAGE</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_dishwashers.png" alt="dishwashers image">
+        <p>DISHWASHERS</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_accessories.png" alt="accessories image">
+        <p>ACCESSORIES</p>
+      </div>
+      <div class="cards">
+        <img src="img/category_coffeeststems.png" alt="coffee ststems image">
+        <p>COFFEE SYSTEMS</p>
+      </div>
+    </div>
+  </section>
+
+  <!--==========Topic==========-->
+  <section id="topic">
+    <h2>Topics</h2>
+    <h3>You can access knowledge detail by knowledge content type</h3>
+    <div class="topic_columns">
+      <div class="cards">
+        <img src="img/topic_errorcode.png" alt="error code icon">
+        <p>ERROR CODES</p>
+      </div>
+      <div class="cards">
+        <img src="img/topic_serviceguide.png" alt="service guide icon">
+        <p>SERVICE GUIDE</p>
+      </div>
+      <div class="cards">
+        <img src="img/topic_partscatalog.png" alt="parts catalog icon">
+        <p>PARTS CATALOG</p>
+      </div>
+      <div class="cards">
+        <img src="img/topic_symptoms.png" alt="symptoms icon">
+        <p>SYMPTOMS</p>
+      </div>
+      <div class="cards">
+        <img src="img/topic_productinfo.png" alt="product info icon">
+        <p>PRODUCT INFO</p>
+      </div>
+      <div class="cards">
+        <img src="img/topic_FAQ.png" alt="FAQ">
+        <p>FAQ</p>
+      </div>
+    </div>
+  </section>
+
+  <!--==========ReCent Searched==========-->
+  <section id="recent_searched">
+    <h2>RECENT SEARCHED</h2>
+    <div class="slider_container">
+      <div class="slider_icons" id="previous">
+         <img src="img/slider_prev.png" alt="prev button">
+      </div>
+      <div class="slider_wrap">
+          <div class="slider_card_zone">
+              <ul class="slider_card">              
+                <li><img src="img/recent_RF22N9781SG.png" alt="RF22N9781SG/AA"></li>
+                <li>5.8 cu. ft. 30" Gas Chef Collection<br>
+                  Pro Range with Dual Convection</li>
+                <li>RF22N9781SG/AA</li>
+              </ul>
+              <ul class="slider_card">              
+                <li><img src="img/recent_NX58M9960PS.png" alt="NX58M9960PS/AA"></li>
+                <li>5.8 cu. ft. 30" Gas Chef Collection<br>
+                    Pro Range with Dual Convection</li>
+                <li>NX58M9960PS/AA</li>
+              </ul>
+              <ul class="slider_card">              
+                <li><img src="img/recent_NV51M9770SM.png" alt="NV51M9770SM/AA"></li>
+                <li>30" Chef Collection Single<br>
+                    Wall Oven with Flex Duo™</li>
+                <li>NV51M9770SM/AA</li>
+              </ul>
+              <ul class="slider_card">              
+                <li><img src="img/recent_RH29H9000SR.png" alt="RH29H9000SR/AA"></li>
+                <li>29 cu. ft. Side-by-Side Food ShowCase<br>
+                    Refrigerator  with Metal Cooling</li>
+                <li>RH29H9000SR/AA</li>
+              </ul>
+              <ul class="slider_card">              
+                <li><img src="img/recent_DVG55M9600V.png" alt="DVG55M9600V/A3"></li>
+                <li>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</li>
+                <li>DVG55M9600V/A3</li>
+              </ul>
+              <ul class="slider_card">              
+                <li><img src="img/recent_WA50M7450AW.png" alt="WA50M7450AW/A4"></li>
+                <li>WA7450 5.0 cu. ft. Top Load Washer</li>
+                <li>WA50M7450AW/A4</li>
+              </ul>
+          </div>
+      </div>
+      <div class="slider_icons" id="next">
+         <img src="img/slider_next.png" alt="next button">
+      </div>
+  </div>
+  </section>
+
+  <!--==========NewsLetter==========-->
+  <section id="newsletter">
+    <div class="banner">
+       <!--background image-->
+    </div>
+    <h2>Exceptional 24/7 Customer Care</h2>
+    <h3>Our dedicated support team is ready to take your call 24/7.<br>
+        We are committed to ensuring you have an exceptional customer experience.</h3>
+    <button type="button" onclick="location.href='#'">CUSTOMER US</button>
+  </section>
+
+  <!--==========Footer==========-->
+  <footer>
+    <ul class="site_map">
+      <li>PRODUCT SUPPORT
+        <ul>
+          <li><a href="#">Ranges</a></li>
+          <li><a href="#">Cooktops</a></li>
+          <li><a href="#">Wall Ovens</a></li>
+          <li><a href="#">Ventilation</a></li>
+          <li><a href="#">Microwaves</a></li>
+          <li><a href="#">Warming Drawers</a></li>
+          <li><a href="#">Outdoor</a></li>
+          <li><a href="#">Refrigeration</a></li>
+          <li><a href="#">Wine & Beverage</a></li>
+          <li><a href="#">Dishwashers</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Coffee Systems</a></li>
+        </ul>
+      </li>
+      <li>TOPIC
+        <ul>
+          <li><a href="#">ERROR CODES</a></li>
+          <li><a href="#">SERVICE GUIDE</a></li>
+          <li><a href="#">PARTS CATALOG</a></li>
+          <li><a href="#">SYMPTOMS</a></li>
+          <li><a href="#">PRODUCT INFO</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </li>
+      <li>TRAINING
+        <ul>
+          <li><a href="#">TECHNICAL</a></li>
+          <li><a href="#">CUSTOMER SERVICE</a></li>
+        </ul>
+      </li>
+      <li><a href="#">NEWSLETTERSS</a></li>
+    </ul>
+    <form>
+      <input name="search" type="text" placeholder="Search">
+      <img src="img/icon_global_search.png" alt="global search icon">
+    </form>
+    <div class="follow_us">FOLLOW US
+      <a href="#"><img src="img/icon_follow_facebook.png" alt="facebook icon"></a> 
+      <a href="#"><img src="img/icon_follow_twitter.png" alt="twitter icon"></a> 
+      <a href="#"><img src="img/icon_follow_youtube.png" alt="youtube icon"></a>
+      <a href="#"><img src="img/icon_follow_pinterest.png" alt="pinterest icon"></a>
+      <a href="#"><img src="img/icon_follow_box.png" alt="box icon"></a>
+    </div>
+    <ul class="etc">
+      <li><a href="#">SITEMAP</a></li>
+      <li><a href="#">PRIVACY POLICY</a></li>
+      <li><a href="#">TERMS OF USE</a></li>
+      <li><a href="#">CONTACT US</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
