@@ -57,6 +57,7 @@ header .top_bar {
   height: 4.7rem;
   padding: 0px 1.5rem;
   background-color: var(--color-black);
+  z-index: 1;
 }
 /* Drawer Btn */
 .btn_drawer {
@@ -235,8 +236,8 @@ header .btn_close {
   margin-left: 1.5rem;
   background-position: -6rem 0px;
 }
-/* Bread */
-header .bread {
+/* Bread Crumb */
+.bread {
   width: 100%;
   height: 2.5rem;
   padding: 1.5rem;
@@ -245,6 +246,11 @@ header .bread {
   line-height: 0rem;
   background-color: var(--color-opaque-black);
   text-align: left;
+  transform: translateY(-100%);
+  transition: .3s;
+}
+.bread.visible {
+  transform: translateY(0%);
 }
 /* Modal */
 .modal_container {

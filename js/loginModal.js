@@ -142,9 +142,9 @@ loginMessageBtn.addEventListener('click', () => {
 
 // 로컬스토리지에 저장 된 값이 존재한다면, 
 // 해당 값을 유저 네임란에 출력하여 로그인 상태를 표시합니다.
-const currentUserLS = localStorage.getItem('user');
+let currentUserLS = localStorage.getItem('user');
 if(currentUserLS !== null) {
-  userName.classList.remove('hidden')
+  userName.classList.remove('hidden');
   userNameText.innerHTML = `welcome! <span style='color:#49ade7'>${currentUserLS}</span>`;
-  userStatusBtn.innerText = 'LOGOUT'
+  userStatusBtn.innerText = 'LOGOUT';
 }
