@@ -7,7 +7,6 @@
   새로고침을 해도 저장된 키 값은 사라지지 않기에 로그인 화면이 유지됩니다.
   로그인 실패는 체크박스를 선택하지 않았을 경우 실패창이 뜨도록 구현했습니다.
   그 외에 로그아웃 체크창, 비밀번호 리셋창, 비밀번호 리셋 완료 메세지창까지 구현하였습니다.
-  모바일 로그인 로그아웃은 구현하지 않았습니다. 로그인 화면은 PC버전에서만 동작합니다.
 */
 
 const skipMenu = document.querySelector('.skip_menu');
@@ -47,3 +46,16 @@ const loginResetBtns = document.querySelectorAll('.password_reset_btn');
 const loginMessageBox = document.querySelector('.reset_message');
 const loginMessagecloseBtn = document.querySelector('.reset_message .btn_close');
 const loginMessageBtn = document.querySelector('.reset_message_btn');
+
+// 로그인 입력창이 닫힐때마다 입력값이 초기화됩니다.
+function inputReset() {
+  loginInput.value = null;
+  loginPassword.value = null;
+  loginCheckBox.checked = false;
+}
+// 로그인 입력창의 닫기버튼을 클릭하면, 모달창이 닫히고, 입력값이 초기화됩니다.
+loginCloseBtn.addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  loginBox.classList.add('none');
+  inputReset();
+});
