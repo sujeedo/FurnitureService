@@ -30,4 +30,20 @@ userStatusBtn.addEventListener('click', () => {
 // 유저 네임란은 포커스가 필요 없다 생각하여 없앴습니다.
 userName.blur();
 
-
+/* Login Modal */
+const userNameText = document.querySelector('.user_name_text');
+const loginCloseBtn = document.querySelector('.login_input_box .btn_close');
+const loginInputForm = document.querySelector('.login_input');
+const loginInput = document.querySelector('.login_input input[type=text]');
+const loginPassword = document.querySelector('.login_input input[type=password]');
+const loginCheckBox = document.querySelector('.login_input input[type=checkbox]');
+const loginforgetBtn = document.querySelector('.forget_pass_btn');
+const loginResetBox = document.querySelector('.password_reset');
+const loginFailBox = document.querySelector('.login_fail');
+const loginFailCloseBtn = document.querySelector('.login_fail .btn_close');
+const loginFailBtn = document.querySelector('.btn_login_fail');
+const loginResetCloseBtn = document.querySelector('.password_reset .btn_close');
+const loginResetBtns = document.querySelectorAll('.password_reset_btn');
+const loginMessageBox = document.querySelector('.reset_message');
+const loginMessagecloseBtn = document.querySelector('.reset_message .btn_close');
+const loginMessageBtn = document.querySelector('.reset_message_btn');
