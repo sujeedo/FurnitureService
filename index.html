@@ -24,7 +24,7 @@
   <script src="./js/newsletter.js" defer></script>
 </head>
 <body> 
-  <a href="#content" class="skip_menu">Skip Menu</a>
+  <a href="#home" class="skip_menu">Skip Menu</a>
   <div class="overall_container">
     <!-- Header -->
     <header>
@@ -123,7 +123,15 @@
           </button>
         </div>
       </div><!-- Top Bar End-->
-      <div class="bread">Home</div>
+      <div class="bread">
+          <a href="#home">Home</a> 
+          <a href="#product">Product</a> 
+          <a href="#topic">Topic</a>
+          <a href="#searchZone">Search Zone</a>
+          <a href="#recentSearched">Recent Searched</a>
+          <a href="#newsletter">Newsletter</a>
+          <a href="#contact">Contact</a>
+      </div>
     </header>
     <!-- Header End-->
     <!-- Modal -->
@@ -215,7 +223,7 @@
     </div>
     <!-- Modal End -->
     <!-- Rolling Banner -->
-    <section id="content" class="banner_container">
+    <section id="home" class="banner_container">
       <h2 class="hidden_text">Recommended Product</h2>
       <ul class="banner_rolling">
         <li class="banner_item">
@@ -237,7 +245,7 @@
     </section>
     <!-- Rolling Banner End-->
     <!-- Product -->
-    <section class="product">
+    <section id="product" class="product">
       <h2 class="title"><span class="title_strong">PRODUCT</span> CATEGORY</h2>
       <p class="description">Find the product you want through product categories and get the service.</p>
       <ul class="category">
@@ -257,7 +265,7 @@
     </section>
     <!-- Product Category End-->
     <!-- Topic -->
-    <section class="topic">
+    <section id="topic" class="topic">
       <h2 class="title"><span class="title_strong">TOPICS</span></h2>
       <p class="description">You can select the information you want and find out more about it.</p>
       <ul class="category">
@@ -273,7 +281,7 @@
     </section>
     <!-- Topic End -->
     <!-- Search Zone-->
-    <section class="search_zone">
+    <section id="searchZone" class="search_zone">
       <div class="bg_black">
         <h2>Know your <span class="title_strong">Product / Name?</span></h2>
         <!-- Search Area -->
@@ -289,7 +297,7 @@
     </section>
     <!-- Search Zone End -->
     <!-- Recent Searched -->
-    <section class="recent_searched">
+    <section id="recentSearched" class="recent_searched">
       <h2 class="title">RECENT <span class="title_strong">SEARCHED</span></h2>
       <div class="slider_container">
         <button type="button" class="ico btn_prev"><span class="hidden_text">previous</span></button>
@@ -342,7 +350,7 @@
     </section>
     <!-- Recent Searched End-->
     <!-- NewsLetter -->
-    <section class="newsletter">
+    <section id="newsletter" class="newsletter">
       <h2 class="title title_strong">NEWSLETTER</h2>
       <div class="news_categories">
         <button type="button" class="category_btn active" data-filter="*">All</button>
@@ -384,7 +392,7 @@
         </li>
       </ul>
     </section>
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2 class="title">EXCEPTIONAL 24/7 <span class="title_strong">CUSTOMER CARE</span></h2>
       <p class="description">Our customer management team is always ready for consultation.
         <span class="br">We are committed to ensuring you have an exceptional customer experience.</span></p>

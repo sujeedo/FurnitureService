@@ -2,6 +2,7 @@
 
 const html = document.querySelector('html');
 const BreadCrumb = document.querySelector('.bread');
+const BreadCrumbTexts = document.querySelectorAll('.bread a');
 const banner = document.querySelector('.banner_container');
 const product = document.querySelector('.product');
 const topic = document.querySelector('.topic');
@@ -11,7 +12,6 @@ const newsletter = document.querySelector('.newsletter');
 const contact = document.querySelector('.contact');
 const footer = document.querySelector('footer');
 
-// 각 섹션의 top값보다 스크롤값이 높을 경우 해당 섹션의 이름을 부차적인 네비게이션 브레드크럼에 출력합니다.
 window.addEventListener('scroll', () => {
   let hrmlScroll = html.scrollTop;
   const bannerH =  Math.floor(window.pageYOffset + banner.getBoundingClientRect().top);
@@ -22,29 +22,53 @@ window.addEventListener('scroll', () => {
   const newsletterH = Math.floor(window.pageYOffset + newsletter.getBoundingClientRect().top);
   const contactH = Math.floor(window.pageYOffset + contact.getBoundingClientRect().top);
   const footerH = Math.floor(window.pageYOffset + footer.getBoundingClientRect().top);
-  if (productH > hrmlScroll) {
+  
+  // activer 초기화 함수
+  function resetActive() {
+    BreadCrumbTexts.forEach(BreadCrumbText => {
+      BreadCrumbText.classList.remove('active')
+    });
+  }
+
+  // 스크롤하여 해당 섹션 영역에 진입하면, 브레드크럼이 나타나 현재 위치를 표시합니다.
+  if(bannerH < hrmlScroll && productH > hrmlScroll) {
     BreadCrumb.classList.remove('visible');
+    resetActive();
+    BreadCrumbTexts[0].classList.add('active');
   }
-  if (productH < hrmlScroll) {
-    BreadCrumb.classList.add('visible');
-    BreadCrumb.innerText = 'Product';
+  if(productH < hrmlScroll && topicH > hrmlScroll) {
+    BreadCrumb.classList.add('visible','active');
+    resetActive();
+    BreadCrumbTexts[1].classList.add('active');
   }
-  if (topicH < hrmlScroll) {
-    BreadCrumb.innerText = 'Topic';
+  if(topicH < hrmlScroll && searchZoneH > hrmlScroll) {
+    resetActive();
+    BreadCrumbTexts[2].classList.add('active');
   }
-  if (searchZoneH < hrmlScroll) {
-    BreadCrumb.innerText = 'Search Zone';
+  if(searchZoneH < hrmlScroll && recentH > hrmlScroll) {
+    resetActive();
+    BreadCrumbTexts[3].classList.add('active');
   }
-  if (recentH < hrmlScroll) {
-    BreadCrumb.innerText = 'Recent Searched';
+  if(recentH < hrmlScroll && newsletterH > hrmlScroll) {
+    resetActive();
+    BreadCrumbTexts[4].classList.add('active');
   }
-  if (newsletterH < hrmlScroll) {
-    BreadCrumb.innerText = 'NewsLetter';
+  if(newsletterH < hrmlScroll && (contactH - 500) > hrmlScroll) {
+    resetActive();
+    BreadCrumbTexts[5].classList.add('active');
   }
-  if (contactH < hrmlScroll) {
-    BreadCrumb.innerText = 'Contact';
+  if((contactH - 500) < hrmlScroll && footerH > hrmlScroll) {
+    resetActive();
+    BreadCrumbTexts[6].classList.add('active');
   }
-  if (footerH < hrmlScroll) {
-    BreadCrumb.innerText = 'Footer';
-  }
+});
+
+// 클릭하여 해당 섹션 영역으로 이동하면, 현재 위치를 표시합니다.
+BreadCrumb.addEventListener('click', (event) => {
+  BreadCrumbTexts.forEach(BreadCrumbText => {
+    BreadCrumbText.classList.remove('active')
+  });
+  let targetEl = event.target;
+  targetEl.classList.add('active');
+  
 });
