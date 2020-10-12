@@ -15,6 +15,7 @@ const userStatusBtn = document.querySelector('.user_status');
 const modalContainer = document.querySelector('.modal_container');
 const logoutBox = document.querySelector('.logout_box');
 const loginBox = document.querySelector('.login_input_box');
+
 // 로그아웃 & 로그인 버튼을 클릭하면 모달창이 나타납니다.
 userStatusBtn.addEventListener('click', () => {
   modalContainer.classList.remove('none');
@@ -25,8 +26,9 @@ userStatusBtn.addEventListener('click', () => {
   if(logoutText == 'LOGIN') {
     loginBox.classList.remove('none');
   }
+  // TO DO : 모달창 진입시 모달창 내부로 포커스 이동 필요.
 });
-// 유저 네임란은 포커스가 필요 없다 생각하여 없앴습니다.
+// mypage 구현이 안되어 있으므로 유저 네임란 포커스 제거.
 userName.blur();
 
 /* Login Modal */
@@ -90,3 +92,50 @@ loginInputForm.addEventListener('submit', (event) => {
   inputReset(); 
 });
 
+// 로그인실패창의 닫기버튼을 클릭하면 모달창이 닫힙니다.
+loginFailCloseBtn.addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  loginFailBox.classList.add('none');
+  inputReset();
+});
+// 로그인실패창의 OK버튼을 클릭하면 이전 로그인입력창으로 돌아갑니다.
+loginFailBtn.addEventListener('click', (event) => {  
+  loginFailBox.classList.add('none');
+  loginBox.classList.remove('none');
+  inputReset();
+  // TO DO : 로그인 입력창으로 돌아올시 입력창 포커스 자동 이동 필요.
+});
+// 비밀번호를 잊었냐는 물음을 클릭하면 비밀번호초기화창이 나타납니다.
+loginforgetBtn.addEventListener('click', () => {  
+  loginBox.classList.add('none');
+  loginResetBox.classList.remove('none');
+});
+// 비밀번호 초기화창의 닫기버튼을 클릭하면 모달창이 닫힙니다.
+loginResetCloseBtn.addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  loginResetBox.classList.add('none');
+  inputReset();
+});
+// 비밀번호 초기화창의 No버튼을 클릭하면 모달창이 닫힙니다.
+loginResetBtns[0].addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  loginResetBox.classList.add('none');
+  inputReset();
+});
+// 비밀번호 초기화창의 Yes버튼을 클릭하면 초기화완료 메세지창이 나타납니다.
+loginResetBtns[1].addEventListener('click', () => {
+  loginResetBox.classList.add('none');
+  loginMessageBox.classList.remove('none');
+});
+// 초기화완료 메세지창의 닫기버튼을 클릭하면 모달창이 닫힙니다.
+loginMessagecloseBtn.addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  loginMessageBox.classList.add('none');
+  inputReset();
+});
+// 초기화완료 메세지창의 Go To Login 버튼을 클릭하면 로그인 입력창으로 돌아갑니다.
+loginMessageBtn.addEventListener('click', () => {
+  loginMessageBox.classList.add('none');
+  loginBox.classList.remove('none');
+  inputReset();
+});
