@@ -195,8 +195,22 @@
   }
   /* Bread Crumb */
   .bread {
-    width: 100%;
+    padding: 0;
     font-size: 12px;
+  }
+  .bread ul {
+    display: flex;
+    margin: 0;
+  }
+  .bread li:nth-child(4) {
+    border-right: 0.1rem solid var(--color-medium-gray);
+  }
+  .bread li:nth-child(7) {
+    border-right: 0;
+  }
+  .bread a {
+    height: 20px;
+    margin-top: 0;
   }
   /* Modal */
   .login_input_box {
