@@ -148,3 +148,26 @@ if(currentUserLS !== null) {
   userNameText.innerHTML = `welcome! <span style='color:#49ade7'>${currentUserLS}</span>`;
   userStatusBtn.innerText = 'LOGOUT';
 }
+
+/* Logout Modal */
+const logoutCloseBtn = document.querySelector('.logout_box .btn_close');
+const logoutBtns = document.querySelectorAll('.logout_box .btn_logout');
+// 로그아웃창의 닫기버튼을 클릭하면 모달창이 닫힙니다.
+logoutCloseBtn.addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  logoutBox.classList.add('none');
+});
+// 로그아웃창의 No버튼을 클릭하면 모달창이 닫힙니다.
+logoutBtns[0].addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  logoutBox.classList.add('none');
+  userStatusBtn.setAttribute('tabindex','1');
+});
+// 로그아웃창의 Yes버튼을 클릭하면 로그아웃창은 닫히고 로그인버튼이 나타납니다.
+logoutBtns[1].addEventListener('click', () => {
+  modalContainer.classList.add('none');
+  logoutBox.classList.add('none');
+  userName.classList.add('hidden');
+  userStatusBtn.innerHTML = 'LOGIN';
+  userStatusBtn.setAttribute('tabindex','1');
+});
