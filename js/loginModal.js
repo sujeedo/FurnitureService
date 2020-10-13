@@ -164,10 +164,11 @@ logoutBtns[0].addEventListener('click', () => {
   userStatusBtn.setAttribute('tabindex','1');
 });
 // 로그아웃창의 Yes버튼을 클릭하면 로그아웃창은 닫히고 로그인버튼이 나타납니다.
+// 로컬스토리지에 저장된 값을 제거합니다.
 logoutBtns[1].addEventListener('click', () => {
   modalContainer.classList.add('none');
   logoutBox.classList.add('none');
   userName.classList.add('hidden');
   userStatusBtn.innerHTML = 'LOGIN';
-  userStatusBtn.setAttribute('tabindex','1');
+  localStorage.removeItem('user');
 });
