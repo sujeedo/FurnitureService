@@ -183,6 +183,9 @@ header .logo a {
 .user_status:hover {
   font-weight: 600;
 }
+.user_status:focus {
+  outline-color: var(--color-blue);
+}
 /* Search Btn */
 .btn_search {
   display: flex;
@@ -326,6 +329,9 @@ header .btn_close {
   border: 0.1rem solid var(--color-white);
   color: var(--color-white);
 }
+.modal_btn:focus {
+  outline-color: var(--color-blue);
+}
 .modal_btn:hover {
   font-weight: 400;
   background: var(--color-blue);
@@ -385,12 +391,15 @@ header .btn_close {
 .login_input ul li:nth-of-type(2) input:hover+label{
   background-position: -13.9rem 0.2rem;
 }
+.login_input ul li:nth-of-type(1) input:focus+label{
+  background-position: -12rem 0.2rem;
+}
+.login_input ul li:nth-of-type(2) input:focus+label{
+  background-position: -13.9rem 0.2rem;
+}
 .login_input ul li input::placeholder {
   font-weight: 100;
   color: var(--color-white);
-}
-.login_input ul li input:hover::placeholder {
-  color: var(--color-blue);
 }
 .login_input .ico {
   display: block;
@@ -468,6 +477,9 @@ header .btn_close {
   font-size: 0.9rem;
   border: 0.1rem solid var(--color-white);
   color: var(--color-white);
+}
+.login_join_btn:focus {
+  outline-color: var(--color-blue);
 }
 .login_join_btn:hover {
   font-weight: 400;
