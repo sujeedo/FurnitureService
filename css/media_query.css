@@ -214,8 +214,13 @@
   }
   /* Modal */
   .login_input_box {
-    height: 650px;
+    height: 640px;
   }
+  .checkbox_wrap label,
+  .forget_pass_btn {
+    font-size: 14px;
+  }
+
   /* Banner */
   .banner_container {
     margin-top: 90px;

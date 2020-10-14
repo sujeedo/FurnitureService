@@ -347,7 +347,7 @@ header .btn_close {
 .login_input_box {
   padding: 4rem;
   width: 30rem;
-  height: 43.5rem;
+  height: 42rem;
 }
 .login_input_box div {
   text-align: left;
@@ -413,40 +413,49 @@ header .btn_close {
 .user_pass .ico {
   background-position: -9.9rem 0.2rem;
 }
-.login_input input[type=checkbox] {
-  display: none;
+.etc_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-.login_input input[type=checkbox]+label {
-  display: inline-block;
-  width: 49%;
-  font-weight: 100;
-  font-size: 0.9rem;
-  text-align: left;
-  color: var(--color-medium-white);
+.checkbox_wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-basis: 1;
+}
+.checkbox_wrap input {
+  margin-left: 0;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 0 0.5rem 0 0.3rem;
+  border: 0.1rem solid var(--color-medium-gray);
+  border-radius: 3px;
+  appearance: none;
   cursor: pointer;
 }
-.login_input input[type=checkbox]+label>span {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  border: 0.1rem solid var(--color-light-gray);
-  border-radius: 0.2rem;
-  transform: translateY(0.2rem);
+.checkbox_wrap label {
+  font-weight: 100;
+  font-size: 1rem;
+  cursor: pointer;
 }
-.login_input input[type=checkbox]:checked+label>span{
-  background: var(--color-white);
+.checkbox_wrap label:after {
+  content: "∨";
+  position: absolute;
+  top: -0.1rem;
+  left: 0.4rem;
+  font-size: 1rem;
+  color: white;
+  display: none;
 }
-.login_input input[type=checkbox]+label:hover {
-  color: var(--color-blue);
-}
-.login_input input[type=checkbox]+label:hover>span {
-  border: 0.1rem solid var(--color-blue);
+.checkbox_wrap input:checked + label:after {
+  display: block;
 }
 .forget_pass_btn {
-  width: 49%;
+  flex-basis: 1;
+  padding: 0;
   font-weight: 100;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-white);
   text-align: right;
 }
