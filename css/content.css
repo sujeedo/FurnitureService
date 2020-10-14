@@ -714,7 +714,7 @@ header .btn_close {
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 20rem;
+  height: 22rem;
   border: 1px solid var(--color-white);
 }
 .category li a{
@@ -722,6 +722,7 @@ header .btn_close {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   padding: 1rem;
   font-weight: 300;
   font-size: 1.3rem;
@@ -735,7 +736,8 @@ header .btn_close {
   height: 75%;
 }
 .category li img {
-  max-width: 100%;
+  max-width: 13rem;
+  max-height: 28rem;
 }
 .category li span:nth-of-type(2) {
   width: 100%;
@@ -750,6 +752,9 @@ header .btn_close {
 .topic a:hover, 
 .topic a:hover .icomoon::before {
   color: var(--color-blue);
+}
+.topic li span:nth-child(1) {
+  margin-top: 1rem;
 }
 .category a:active {
   transform: scale(0.96);
@@ -863,7 +868,6 @@ header .btn_close {
   align-items: center;
   margin: 2rem 0 3rem 0;
 }
-/* Prev Btn & Next Btn */
 .btn_prev, .btn_next {
   width: 1.5rem;
   height: 2.4rem;
@@ -885,6 +889,7 @@ header .btn_close {
   overflow: hidden;
   position: relative;
   width: 100%;
+  min-width: 24rem;
   height: 20rem;
 }
 .slider_cards {
@@ -894,14 +899,12 @@ header .btn_close {
   right: -100px;
   width: 100%;
   height: 20rem;
-  padding: 1.5rem;
   z-index: 0;
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
 .cards_img {
   width: 20rem;
-  min-width: 7rem;
   height: 100%;
 }
 .slider_cards:nth-of-type(1) .cards_img{
@@ -933,7 +936,7 @@ header .btn_close {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 50%;
+  max-width: 50%;
   height: 100%;
   padding-left: 1.5rem;
 }
@@ -1061,6 +1064,9 @@ header .btn_close {
   padding: 1rem;
   text-align: left;
 }
+.news_item a:active {
+  transform: scale(0.98);
+}
 .news_category {
   font-size: 1rem;
 }
@@ -1122,6 +1128,9 @@ header .btn_close {
 .contact a:active {
   transform: scale(0.96);
 }
+.contact a:focus {
+  outline-color: var(--color-blue);
+}
 /* Footer */
 .footer_bg {
   display: flex;
@@ -1146,6 +1155,7 @@ footer .search_container,
 }
 .company_info .logo {
   display: block;
+  width: 7rem;
   margin-bottom: 2rem;
   font-size: 3rem;
   font-family: 'Orbitron', sans-serif;
