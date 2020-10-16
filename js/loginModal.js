@@ -83,17 +83,6 @@ userStatusBtn.addEventListener('click', () => {
   }
 });
 
-/* 로그아웃 & 로그인 버튼을 Enter키를 눌러 모달창을 열었다면, focus가 모달창 내부로 이동합니다.
-userStatusBtn.addEventListener('keydown', (event) => {
-  const enterKeyCode = event.keyCode;
-  if(enterKeyCode === 9) {
-    modalContainer.focus();
-    skipMenu.setAttribute('tabindex','-1');
-    userName.setAttribute('tabindex','-1');
-    userStatusBtn.setAttribute('tabindex','-1');
-  }
-});*/
-
 // mypage 구현이 안되어 있으므로 유저 네임란 포커스 제거.
 userName.blur();
 
@@ -260,11 +249,3 @@ logoutBtns[1].addEventListener('click', () => {
   modalOutFocus();
   userStatusBtn.focus();
 });
-
-/* 체크박스에 포커스가 가도록 합니다.(미구현)
-loginCheckBox.addEventListener('keypress', (event) => {
-  const enterKeyCode = event.keyCode;
-  if(enterKeyCode === 13) {
-    loginCheckBox.checked = true;
-  }
-});*/

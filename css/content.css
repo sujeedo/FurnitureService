@@ -172,7 +172,7 @@ header .logo a {
 /* Login Logout Btn */
 .user_status {
   position: absolute;
-  top: -1000px;
+  top: -100%;
   left: 0;
   margin-left: 1rem;
   font-weight: 100;
@@ -1283,4 +1283,7 @@ footer a:active, footer a:active .icon-ico_box:before{
 }
 .left {
   top: 305px !important;
+}
+.tophidden {
+  top: -100% !important;
 }

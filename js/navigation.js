@@ -23,6 +23,7 @@ drawerBtn.addEventListener('click', () => {
   menu.classList.toggle('open_gnb');
   drawerBtn.classList.toggle('close_icon');
   userStatusBtn.classList.toggle('left');
+  userStatusBtn.classList.toggle('tophidden');
 });
 
 // drawer버튼을 클릭하여 gnb영역을 닫습니다.
@@ -46,137 +47,235 @@ menuBg.addEventListener('click', () => {
     arrowicon.classList.remove('top');
   });
   drawerBtn.classList.remove('close_icon');
+  userStatusBtn.classList.add('tophidden');
 });
 
-function reactive() {
-  if(window.innerWidth < 812) {
-    console.log('모바일')
-
-    // gnb의 상단메뉴 중 하위메뉴가 있는 메뉴를 클릭하면 하위메뉴가 열립니다.
-    mainMenuTexts[0].addEventListener('click', () => {
+function mobile() {
+  console.log('모바일')
+  // gnb의 상단메뉴 중 하위메뉴가 있는 메뉴를 클릭하면 하위메뉴가 열립니다.
+  mainMenuTexts[0].addEventListener('click', () => {
+    if(window.innerWidth < 812) {
       subMenus[0].classList.toggle('open_sub_menu');
       arrowicons[0].classList.toggle('top');
       subMenus[1].classList.remove('open_sub_menu');
       subMenus[2].classList.remove('open_sub_menu');
       arrowicons[1].classList.remove('top');
       arrowicons[2].classList.remove('top');
-    });
-    mainMenuTexts[1].addEventListener('click', () => {
+      userStatusBtn.classList.remove('left');
+      let subMenuH = subMenus[0].clientHeight + 305;
+      userStatusBtn.style.top = subMenuH + 'px';
+    }else {
+      return false
+    }
+  });
+  mainMenuTexts[1].addEventListener('click', () => {
+    if(window.innerWidth < 812) {
       subMenus[1].classList.toggle('open_sub_menu');
       arrowicons[1].classList.toggle('top');
       subMenus[0].classList.remove('open_sub_menu');
       subMenus[2].classList.remove('open_sub_menu');
       arrowicons[0].classList.remove('top');
       arrowicons[2].classList.remove('top');
-    });
-    mainMenuTexts[2].addEventListener('click', () => {
+      userStatusBtn.classList.remove('left');
+      let subMenuH = subMenus[1].clientHeight + 305;
+      userStatusBtn.style.top = subMenuH + 'px';
+    }else {
+      return false
+    }
+  });
+  mainMenuTexts[2].addEventListener('click', () => {
+    if(window.innerWidth < 812) {
       subMenus[2].classList.toggle('open_sub_menu');
       arrowicons[2].classList.toggle('top');
       subMenus[0].classList.remove('open_sub_menu');
       subMenus[1].classList.remove('open_sub_menu');
       arrowicons[0].classList.remove('top');
       arrowicons[1].classList.remove('top');
-    });
+      userStatusBtn.classList.remove('left');
+      userStatusBtn.classList.remove('left');
+      let subMenuH = subMenus[2].clientHeight + 305;
+      userStatusBtn.style.top = subMenuH + 'px';
+    }else {
+      return false
+    }
+  });
 
-    // gnb의 상단메뉴 중 하위메뉴가 없는 메뉴를 클릭하면 하위메뉴가 닫힙니다.
-    mainMenus[3].addEventListener('click', () => {
+  // gnb의 상단메뉴 중 하위메뉴가 없는 메뉴를 클릭하면 하위메뉴가 닫힙니다.
+  mainMenus[3].addEventListener('click', () => {
+    if(window.innerWidth < 812) {
       subMenus[0].classList.remove('open_sub_menu');
       subMenus[1].classList.remove('open_sub_menu');
       subMenus[2].classList.remove('open_sub_menu');
       arrowicons[0].classList.remove('top');
       arrowicons[1].classList.remove('top');
       arrowicons[2].classList.remove('top');
-    });
+      userStatusBtn.classList.add('left');
+    }else {
+      return false
+    }
+  });
 
-    // 하위 메뉴 마지막 요소를 포커스가 벗어나면, 하위 메뉴가 닫힙니다.
-    subMenuLists[19].addEventListener('focusout', () => {
+  // 하위 메뉴 마지막 요소를 포커스가 벗어나면, 하위 메뉴가 닫힙니다.
+  subMenuLists[19].addEventListener('focusout', () => {
+    if(window.innerWidth < 812) {
       subMenus[2].classList.remove('open_sub_menu');
       arrowicons[2].classList.remove('top');
-    });
+      userStatusBtn.classList.add('left');
+    }else {
+      return false
+    }
+  });
 
-    const loginBtn = document.querySelector('.user_status');
-    // contact us메뉴를 지나면 포커스가 login으로 이동합니다.
-    mainMenus[6].addEventListener('keydown', (e) => {
-      if (e.keyCode === 9 && !e.shiftKey) {
-        e.preventDefault();
-        loginBtn.focus();
-      }
-    });
-    // login메뉴의 이전 포커스를 contact us메뉴로 지정합니다.
-    loginBtn.addEventListener('keydown', (e) => {
-      if (e.shiftKey && e.keyCode === 9) {
+  const loginBtn = document.querySelector('.user_status');
+  // contact us메뉴를 지나면 포커스가 login으로 이동합니다.
+  mainMenus[6].addEventListener('keydown', (e) => {
+    if(window.innerWidth < 812) {
+    if (e.keyCode === 9 && !e.shiftKey) {
+      e.preventDefault();
+      loginBtn.focus();
+    }
+  }else {
+    return false
+  }
+  });
+  // login메뉴의 이전 포커스를 contact us메뉴로 지정합니다.
+  loginBtn.addEventListener('keydown', (e) => {
+    if(window.innerWidth < 812) {
+      if(e.shiftKey && e.keyCode === 9) {
         e.preventDefault();
         mainMenus[6].querySelector('.main_menu a').focus();
       }
-    });
-
-  } else {
-    console.log('피씨')
-
-    // gnb의 상단메뉴 중 하위메뉴가 있는 메뉴에 커서가 진입하면 하위메뉴가 열립니다.
-    mainMenuTexts[0].addEventListener('mouseenter', () => {
-      subMenus[0].classList.add('open_sub_menu');
-      subMenus[1].classList.remove('open_sub_menu');
-      subMenus[2].classList.remove('open_sub_menu');
-    });
-    mainMenuTexts[1].addEventListener('mouseenter', () => {
-      subMenus[1].classList.add('open_sub_menu');
-      subMenus[0].classList.remove('open_sub_menu');
-      subMenus[2].classList.remove('open_sub_menu');
-    });
-    mainMenuTexts[2].addEventListener('mouseenter', () => {
-      subMenus[2].classList.add('open_sub_menu');
-      subMenus[0].classList.remove('open_sub_menu');
-      subMenus[1].classList.remove('open_sub_menu');
-    });
-
-    mainMenuTexts[0].addEventListener('focus', () => {
-      subMenus[0].classList.add('open_sub_menu');
-      subMenus[1].classList.remove('open_sub_menu');
-      subMenus[2].classList.remove('open_sub_menu');
-    });
-    mainMenuTexts[1].addEventListener('focus', () => {
-      subMenus[1].classList.add('open_sub_menu');
-      subMenus[0].classList.remove('open_sub_menu');
-      subMenus[2].classList.remove('open_sub_menu');
-    });
-    mainMenuTexts[2].addEventListener('focus', () => {
-      subMenus[2].classList.add('open_sub_menu');
-      subMenus[0].classList.remove('open_sub_menu');
-      subMenus[1].classList.remove('open_sub_menu');
-    });
-
-    // 마우스 커서가 하위메뉴를 벗어나거나 하위메뉴가 없는 메뉴에 진입하면 닫힙니다.
-    subMenus[0].addEventListener('mouseleave', () => {
-      subMenus[0].classList.remove('open_sub_menu');
-      arrowicons[0].classList.remove('top');
-    });
-    subMenus[1].addEventListener('mouseleave', () => {
-      subMenus[1].classList.remove('open_sub_menu');
-      arrowicons[1].classList.remove('top');
-    });
-    subMenus[2].addEventListener('mouseleave', () => {
-      subMenus[2].classList.remove('open_sub_menu');
-      arrowicons[2].classList.remove('top');
-    });
-    mainMenus[3].addEventListener('mouseenter', () => {
-      subMenus[2].classList.remove('open_sub_menu');
-      arrowicons[2].classList.remove('top');
-    });
-    
-    // focus가 하위메뉴 마지막 요소를 벗어나면 닫힙니다.
-    subMenuLists[19].addEventListener('focusout', () => {
-      subMenus[2].classList.remove('open_sub_menu');
-    });
-  }
+    }else {
+      return false
+    }
+  });
+  
 }
 
+function desktop() {
+  console.log('피씨')
+
+  // gnb의 상단메뉴 중 하위메뉴가 있는 메뉴에 커서가 진입하면 하위메뉴가 열립니다.
+  mainMenuTexts[0].addEventListener('mouseenter', () => {
+    if(window.innerWidth > 812) {
+      subMenus[0].classList.add('open_sub_menu');
+      subMenus[1].classList.remove('open_sub_menu');
+      subMenus[2].classList.remove('open_sub_menu');
+    }else {
+      return false
+    }
+  });
+  mainMenuTexts[1].addEventListener('mouseenter', () => {
+    if(window.innerWidth > 812) {
+      subMenus[1].classList.add('open_sub_menu');
+      subMenus[0].classList.remove('open_sub_menu');
+      subMenus[2].classList.remove('open_sub_menu');
+    }else {
+      return false
+    }
+  });
+  mainMenuTexts[2].addEventListener('mouseenter', () => {
+    if(window.innerWidth > 812) {
+      subMenus[2].classList.add('open_sub_menu');
+      subMenus[0].classList.remove('open_sub_menu');
+      subMenus[1].classList.remove('open_sub_menu');
+    }else {
+      return false
+    }
+  });
+
+  mainMenuTexts[0].addEventListener('focus', () => {
+    if(window.innerWidth > 812) {
+      subMenus[0].classList.add('open_sub_menu');
+      subMenus[1].classList.remove('open_sub_menu');
+      subMenus[2].classList.remove('open_sub_menu');
+    }else {
+      return false
+    }
+  });
+  mainMenuTexts[1].addEventListener('focus', () => {
+    if(window.innerWidth > 812) {
+      subMenus[1].classList.add('open_sub_menu');
+      subMenus[0].classList.remove('open_sub_menu');
+      subMenus[2].classList.remove('open_sub_menu');
+    }else {
+      return false
+    }
+  });
+  mainMenuTexts[2].addEventListener('focus', () => {
+    if(window.innerWidth > 812) {
+      subMenus[2].classList.add('open_sub_menu');
+      subMenus[0].classList.remove('open_sub_menu');
+      subMenus[1].classList.remove('open_sub_menu');
+    }else {
+      return false
+    }
+  });
+
+  // 마우스 커서가 하위메뉴를 벗어나거나 하위메뉴가 없는 메뉴에 진입하면 닫힙니다.
+  subMenus[0].addEventListener('mouseleave', () => {
+    if(window.innerWidth > 812) {
+      subMenus[0].classList.remove('open_sub_menu');
+      arrowicons[0].classList.remove('top');
+    }else {
+      return false
+    }
+  });
+  subMenus[1].addEventListener('mouseleave', () => {
+    if(window.innerWidth > 812) {
+      subMenus[1].classList.remove('open_sub_menu');
+      arrowicons[1].classList.remove('top');
+    }else {
+      return false
+    }
+  });
+  subMenus[2].addEventListener('mouseleave', () => {
+    if(window.innerWidth > 812) {
+      subMenus[2].classList.remove('open_sub_menu');
+      arrowicons[2].classList.remove('top');
+    }else {
+      return false
+    }
+  });
+  mainMenus[3].addEventListener('mouseenter', () => {
+    if(window.innerWidth > 812) {
+      subMenus[2].classList.remove('open_sub_menu');
+      arrowicons[2].classList.remove('top');
+    }else {
+      return false
+    }
+  });
+
+  // focus가 하위메뉴 마지막 요소를 벗어나면 닫힙니다.
+  subMenuLists[19].addEventListener('focusout', () => {
+    if(window.innerWidth > 812) {
+      subMenus[2].classList.remove('open_sub_menu');
+    }else {
+      return false
+    }
+  });
+}
+
+// function reactive() {
+//   if(window.innerWidth < 812) {
+//     mobile();
+//   } 
+//   else {
+//     desktop();
+//   }
+// }
+
+// let resizeId = "";
 window.addEventListener('resize', () => {
-  reactive();
+  // clearTimeout(resizeId);
+  //   resizeId = setTimeout(reactive, 250);
+  mobile();
+  desktop();
 });
 
 window.addEventListener('load', () => {
-  reactive();
+  mobile();
+  desktop();
 });
 
 /* Header Search Box*/
